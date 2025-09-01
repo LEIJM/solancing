@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solancing | Comprehensive BMS Solutions, Battery Integration, and Educational Equipment</title>
+    <style>
+        /* Global Styles based on Palantir.net: Modern, clean, minimalist corporate design */
+        body {
+            font-family: 'Arial', sans-serif; /* Sans-serif for readability, matching Palantir's professional typography */
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* White background for simplicity and focus on content */
+            color: #333333; /* Dark gray text for high contrast and readability */
+            line-height: 1.6; /* Adequate line spacing for text blocks */
+        }
+
+        /* Header: Responsive navigation with foldable menu for mobile */
+        header {
+            background-color: #f8f8f8; /* Light gray for subtle separation */
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.8em; /* Larger for branding, bold weight */
+            font-weight: bold;
+            color: #0056a3; /* Blue accent for professionalism, inspired by tech consulting palettes */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 1em; /* Standard menu size */
+            font-weight: 500; /* Medium weight for navigation links */
+        }
+
+        nav ul li a:hover {
+            color: #0056a3; /* Hover accent color */
+        }
+
+        /* Hamburger menu for mobile (responsive design) */
+        .menu-toggle {
+            display: none; /* Hidden on desktop */
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Collapse on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #f8f8f8;
+                padding: 20px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 1.5em;
+            }
+        }
+
+        /* Main Content: Block-based sections with ample spacing */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px; /* Spacing between sections for breathing room */
+        }
+
+        h1 {
+            font-size: 2.5em; /* Large hero title, bold */
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #0056a3; /* Accent color for headings */
+        }
+
+        h2 {
+            font-size: 2em; /* Subsection headings */
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.5em; /* Sub-sub headings */
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1em; /* Standard body text size */
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1em;
+        }
+
+        /* CTA Buttons: Prominent, rounded, with hover effects */
+        .cta-button {
+            display: inline-block;
+            background-color: #0056a3;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px; /* Subtle rounding */
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #003f7a; /* Darker blue on hover */
+        }
+
+        /* Footer: Simple, with contact and copyright */
+        footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em; /* Slightly smaller for footer text */
+            color: #666666;
+        }
+
+        /* Form Styling for Contact Us */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #0056a3;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #003f7a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header: Matching Palantir's foldable nav and clean branding -->
+    <header>
+        <nav>
+            <div class="logo">Solancing</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products & Solutions</a></li>
+                <li><a href="#resources">Technical Support & Learning Resources</a></li>
+                <li><a href="#applications">Industry Applications & Case Studies</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <!-- Main Content: Block sections, focusing on 3 key modules for brevity (Home, Products & Solutions, About Us) -->
+    <main>
+        <!-- Home Section: Overview with tagline and key modules, similar to Palantir's intro block -->
+        <section id="home">
+            <h1>Your Partner for Advanced BMS Solutions</h1>
+            <p>Industry Focus: Comprehensive solutions for BMS, battery pack integration, and educational training systems.</p>
+            <p>Tagline / Core Advantages: Safe, Reliable, Scalable, and Educationally Validated.</p>
+            <h2>Key Modules</h2>
+            <ul>
+                <li>BMS Products</li>
+                <li>Battery Pack Integration</li>
+                <li>Educational Equipment</li>
+                <li>Solutions</li>
+                <li>Resource Center</li>
+            </ul>
+            <a href="#products" class="cta-button">Explore Our Offerings</a>
+        </section>
+
+        <!-- Products & Solutions Section: Detailed sub-modules in a structured list, with professional typography -->
+        <section id="products">
+            <h1>Products & Solutions</h1>
+            <h2>BMS Products</h2>
+            <ul>
+                <li>Cell Monitoring Modules</li>
+                <li>Master Control Units / Sampling Boards</li>
+                <li>Communication Interfaces (CAN, RS485, Ethernet)</li>
+                <li>Core Functions (Cell Balancing, SOC/SOH Estimation, Thermal Management, etc.)</li>
+            </ul>
+            <h2>Battery Pack Integration</h2>
+            <ul>
+                <li>Cell Selection & Configuration</li>
+                <li>Modular Design</li>
+                <li>Thermal Management (Liquid Cooling / Air Cooling)</li>
+                <li>Safety Protection (Overcharge, Overdischarge, Short-Circuit, Explosion-Proof)</li>
+            </ul>
+            <h2>Educational Equipment</h2>
+            <ul>
+                <li>BMS Development & Training Kits</li>
+                <li>Battery Pack Training Benches</li>
+                <li>Software Platforms (BMS Simulation, Parameter Configuration)</li>
+                <li>Teaching Cases & Curriculum Resources (for Universities & Research Institutes)</li>
+            </ul>
+            <a href="#resources" class="cta-button">Learn More</a>
+        </section>
+
+        <!-- About Us Section: Company info with contact form, mimicking Palantir's testimonial/CTA style -->
+        <section id="about">
+            <h1>About Us</h1>
+            <h2>Company Profile & Team Introduction</h2>
+            <p>Solancing is a leading provider of innovative BMS technologies, specializing in battery pack integration and educational tools for the energy sector. Our team of experts brings decades of experience in R&D and practical applications.</p>
+            <h2>R&D Capabilities & Laboratory Facilities</h2>
+            <p>We boast state-of-the-art labs equipped for advanced battery testing, algorithm development, and safety validations, ensuring our solutions meet the highest industry standards.</p>
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer: Simple copyright, aligning with Palantir's minimal footer -->
+    <footer>
+        <p>&copy; 2025 Solancing. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav ul').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

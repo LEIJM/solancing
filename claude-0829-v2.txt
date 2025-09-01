@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solancing - Advanced BMS & Battery Solutions</title>
+    <style>
+        /* Premium Black & White Typography System */
+        :root {
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #333333;
+            --light-gray: #666666;
+            --lighter-gray: #999999;
+            --border-gray: #e5e5e5;
+            --bg-gray: #f8f8f8;
+            --white: #ffffff;
+            --accent-gray: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+            font-weight: 400;
+        }
+
+        /* Navigation - White background, black text */
+        .navbar {
+            background: var(--white);
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: var(--medium-gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        /* Hero Section - Black background, white text */
+        .hero {
+            background: var(--black);
+            color: var(--white);
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(26,26,26,0.95) 100%);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 2rem;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* Services Section - White background, black text */
+        .services-section {
+            padding: 8rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: var(--light-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 2px solid var(--border-gray);
+            border-radius: 0;
+            padding: 3rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--black);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--black);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--black);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+
+        .service-card h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            color: var(--light-gray);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .learn-more {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 2px solid transparent;
+        }
+
+        .learn-more:hover {
+            color: var(--medium-gray);
+            border-bottom-color: var(--black);
+        }
+
+        .learn-more::after {
+            content: '→';
+            margin-left: 0.75rem;
+            transition: transform 0.3s ease;
+            font-weight: 900;
+        }
+
+        .learn-more:hover::after {
+            transform: translateX(6px);
+        }
+
+        /* Features Section - Black background, white text */
+        .features-section {
+            background: var(--black);
+            color: var(--white);
+            padding: 8rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .feature-content h2 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+
+        .feature-content p {
+            font-size: 1.25rem;
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .feature-list li::before {
+            content: '■';
+            color: var(--white);
+            font-weight: 900;
+            margin-right: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .feature-image {
+            background: var(--white);
+            color: var(--black);
+            border-radius: 0;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* CTA Section - Dark gray background, white text */
+        .cta-section {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            color: #cccccc;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            background: var(--white);
+            color: var(--black);
+            padding: 1.25rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: 2px solid var(--white);
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Footer - Light gray background, dark text */
+        footer {
+            background: var(--bg-gray);
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 2px solid var(--border-gray);
+        }
+
+        .footer-content {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .service-card {
+                padding: 2.5rem;
+            }
+
+            .feature-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Solancing</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#solutions" class="nav-link">Solutions</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Advanced BMS & Battery Solutions</h1>
+            <p class="tagline">Your partner for comprehensive battery management systems, pack integration, and educational training solutions</p>
+            <p class="subtitle">Safe • Reliable • Scalable • Educationally Validated</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Core Solutions</h2>
+                <p class="section-description">We specialize in delivering cutting-edge BMS technology, battery pack integration services, and comprehensive educational equipment for institutions worldwide.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">BMS</div>
+                    <h3>BMS Products</h3>
+                    <p>Complete battery management systems featuring advanced cell monitoring, master control units, and comprehensive communication interfaces. Our BMS solutions ensure optimal performance with precise SOC/SOH estimation and intelligent thermal management.</p>
+                    <a href="#" class="learn-more">Learn more about BMS products</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Battery Pack Integration</h3>
+                    <p>Expert battery pack design and integration services including cell selection, modular configurations, thermal management systems, and comprehensive safety protection mechanisms for various industrial applications.</p>
+                    <a href="#" class="learn-more">Learn more about integration</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>Educational Equipment</h3>
+                    <p>Professional BMS development kits, battery pack training benches, and comprehensive software platforms designed for universities and research institutes. Complete with curriculum resources and practical case studies.</p>
+                    <a href="#" class="learn-more">Learn more about education</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-content">
+                    <h2>Industry-Leading Technology</h2>
+                    <p>Our solutions combine cutting-edge research with practical application, delivering systems that meet the most demanding requirements across automotive, energy storage, and educational sectors.</p>
+                    <ul class="feature-list">
+                        <li>Advanced Algorithm Development</li>
+                        <li>Real-time Monitoring & Control</li>
+                        <li>Scalable Architecture Design</li>
+                        <li>Comprehensive Safety Protection</li>
+                        <li>Educational Training Support</li>
+                        <li>24/7 Technical Assistance</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div>BMS Technology Visualization</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Advance Your Battery Solutions?</h2>
+            <p>Partner with Solancing to implement state-of-the-art BMS technology and comprehensive battery management solutions tailored to your specific requirements.</p>
+            <a href="#" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Solancing. All rights reserved. | Advanced BMS & Battery Solutions</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
